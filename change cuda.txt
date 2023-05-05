@@ -1,3 +1,0 @@
-sudo rm -rf /usr/local/cuda
-sudo ln -s /usr/local/cuda-xx.x /usr/local/cuda
-nvcc --version
