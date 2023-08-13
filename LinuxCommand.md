@@ -5,6 +5,34 @@
     sudo ln -s /usr/local/cuda-xx.x /usr/local/cuda
     nvcc --version
     ```
+- 更改 gcc g++ 版本
+  ```
+  sudo add-apt-repository ppa:ubuntu-toolchain-r/test
+  sudo apt-get update
+  sudo apt install gcc-X
+  sudo apt install g++-X
+  ```
+
+  update the alternatives for compilers
+  ```
+  #Remove the previous alternatives
+  sudo update-alternatives --remove-all gcc
+  sudo update-alternatives --remove-all g++
+
+  #Define the compiler
+  sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-X priority-number(30)
+  sudo update-alternatives --install /usr/bin/g++ g++ /usr/bin/g++-X priority-number(30)
+
+  sudo update-alternatives --install /usr/bin/cc cc /usr/bin/gcc priority-number(30)
+  sudo update-alternatives --set cc /usr/bin/gcc
+
+  sudo update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++ priority-number(30)
+  sudo update-alternatives --set c++ /usr/bin/g++
+
+  #Confirm and update (You can use the default setting)
+  sudo update-alternatives --config gcc
+  sudo update-alternatives --config g++
+  ```
 
 - 统计文件夹下文件数量
     - 不包含子目录
