@@ -5,7 +5,9 @@
     sudo ln -s /usr/local/cuda-xx.x /usr/local/cuda
     nvcc --version
     ```
+
 - 更改 gcc g++ 版本
+
   ```
   sudo add-apt-repository ppa:ubuntu-toolchain-r/test
   sudo apt-get update
@@ -14,6 +16,7 @@
   ```
 
   update the alternatives for compilers
+
   ```
   #Remove the previous alternatives
   sudo update-alternatives --remove-all gcc
@@ -34,18 +37,27 @@
   sudo update-alternatives --config g++
   ```
 
+- 查看Ubuntu中安装的软件包
+  ```
+  apt list --installed
+  ```
+
+
 - 统计文件夹下文件数量
-    - 不包含子目录
+  - 不包含子目录
+
     ```
     ls -l | grep "^-" | wc -l
     ```
 
-    - 包含子目录
+  - 包含子目录
+
     ```
     ls -lR | grep "^-" | wc -l
     ```
 
 - 查看文件权限以及目录信息等
+
     ```
     ls -a 列出目录所有文件，包含以.开始的隐藏文件
     ls -A 列出除.及..的其它文件
@@ -58,16 +70,19 @@
 
 - cat 指令
   - 显示整个文件
+
     ```
     cat filename
     ```
 
   - 从键盘创建一个文件
+
     ```
     cat > filename
     ```
 
   - 将几个文件合并成一个文件
+
     ```
     cat file1 file2 > file
     ```
@@ -75,7 +90,7 @@
 - df 指令
   
     显示磁盘空间使用情况。获取硬盘被占用了多少空间，目前还剩下多少空间等信息，如果没有文件名被指定，则所有当前被挂载的文件系统的可用空间将被显示。
-    
+
     默认情况下，磁盘空间将以 1KB 为单位进行显示，除非环境变量 POSIXLY_CORRECT 被指定，那样将以512字节为单位进行显示
 
     ```
